@@ -8,8 +8,7 @@ RUN apk add --update --no-cache \
     libjpeg-turbo-dev \
     libpng-dev
 
-RUN docker-php-ext-configure gd --with-freetype-dir=/usr
-RUN docker-php-ext-install exif gd pdo pdo_mysql opcache intl
+RUN docker-php-ext-install pdo pdo_mysql opcache intl
 
 COPY double-gestion.project.ini /usr/local/etc/php/conf.d
 COPY double-gestion.project.pool.conf /etc/php7/fpm.d/
