@@ -28,3 +28,7 @@ services:
             - php-fpm:ro
         volumes:
             - ./logs/nginx/:/var/log/nginx
+    maildev:
+        image: djfarrelly/maildev
+        ports:
+            - "8080:80"
