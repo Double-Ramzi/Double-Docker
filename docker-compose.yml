@@ -15,7 +15,7 @@ services:
             - "9000"
         volumes:
             - ./double-gestion.project:/var/www/double-gestion.project
-            - ./logs/double-gestion.project:/var/www/double-gestion.project/app/logs
+            - ./logs/double-gestion.project:/var/www/double-gestion.project/var/logs
         links:
             - mysql
     nginx:
