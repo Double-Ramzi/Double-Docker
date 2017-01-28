@@ -1,6 +1,7 @@
 version: '2'
 services:
     mysql:
+        container_name: mysql
         image: mysql
         ports:
             - "3306:3306"
@@ -10,6 +11,7 @@ services:
             MYSQL_USER: symfony
             MYSQL_PASSWORD: symfony
     php-fpm:
+        container_name: php
         build: ./php-fpm
         expose:
             - "9000"
@@ -19,6 +21,7 @@ services:
         links:
             - mysql
     nginx:
+        container_name: nginx
         build: ./nginx
         ports:
             - "80:80"
@@ -29,6 +32,7 @@ services:
         volumes:
             - ./logs/nginx/:/var/log/nginx
     maildev:
+        container_name: maildev
         image: djfarrelly/maildev
         ports:
             - "8080:80"
