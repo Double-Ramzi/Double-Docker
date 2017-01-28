@@ -17,7 +17,6 @@ services:
             - "9000"
         volumes:
             - ./double-gestion.project:/var/www/double-gestion.project
-            - ./logs/double-gestion.project:/var/www/double-gestion.project/var/logs
         links:
             - mysql
     nginx:
@@ -29,8 +28,6 @@ services:
             - php-fpm
         volumes_from:
             - php-fpm:ro
-        volumes:
-            - ./logs/nginx/:/var/log/nginx
     maildev:
         container_name: maildev
         image: djfarrelly/maildev
