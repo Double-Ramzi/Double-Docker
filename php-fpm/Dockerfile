@@ -12,3 +12,5 @@ RUN docker-php-ext-install pdo pdo_mysql opcache intl
 
 COPY double-gestion.project.ini /usr/local/etc/php/conf.d
 COPY double-gestion.project.pool.conf /etc/php7/fpm.d/
+
+WORKDIR /var/www/double-gestion.project
